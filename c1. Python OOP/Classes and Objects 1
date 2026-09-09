@@ -1,0 +1,177 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "aa3b49e3-158c-460e-b38f-bc25a88e9d60",
+   "metadata": {},
+   "source": [
+    "# Classes and Objects 1\n",
+    "\n",
+    "A class in Pythona template defined by\n",
+    "the user so that they can create objects and other instances of the objects\n",
+    "\n",
+    "It simplifies complex programming by grouping data togehter and organizing it"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9d9eb973-fa17-4559-baa4-6039f7a554fe",
+   "metadata": {},
+   "source": [
+    "- defining a class"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "3ec0b7f0-d0a6-44e8-b559-cdd86c3fcb56",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class Dogs:\n",
+    "    sound = 'bark' # an attribute of the class"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "680dbece-2136-4e6f-a1c7-952a6d30ccc7",
+   "metadata": {},
+   "source": [
+    "- creating an object form the Dog class"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "968c4593-dcb0-47ed-91f3-aea0b5d8bab5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "bark\n"
+     ]
+    }
+   ],
+   "source": [
+    "dogs = Dogs()\n",
+    "print(dogs.sound) \n",
+    "# accessing the class attribute , its like youve created\n",
+    "# a new syntax"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "9a02ce32-ab09-4c85-8494-f37b74663f1a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Buddy\n",
+      "3\n",
+      "German Shepard\n"
+     ]
+    }
+   ],
+   "source": [
+    "# __init__ function \n",
+    "class Dog:\n",
+    "\n",
+    "    def __init__(self, name, age, species): # initialises name,age, speices\n",
+    "        self.name = name  # Instance attribute of the Dog class\n",
+    "        self.age = age # Instance attribute of the Dog class\n",
+    "        self.species = species # Instance attribute of the Dog class\n",
+    "\n",
+    "# Creating an object of the Dog class\n",
+    "dog1 = Dog(\"Buddy\",3,\"German Shepard\")\n",
+    "\n",
+    "print(dog1.name)  # Output: Buddy\n",
+    "print(dog1.age) # Output: 3\n",
+    "print(dog1.species)  # Output: Canine"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fc4630b5-67c6-42df-aaa1-2c03a205df58",
+   "metadata": {},
+   "source": [
+    "### self parameter and __ str __\n",
+    "\n",
+    "- the self parameter allows us to access the ttributes and methods of the\n",
+    "object\n",
+    "\n",
+    "- When print(dog1) is called, Python automatically uses the __ str __ method to get a string representation of the object. Without __ str __ , calling print(dog1) would produce something like <__main__.Dog object at 0x00000123>."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "64bf6291-f533-4ffb-9a3c-5bc95a999e63",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Buddy is barking!\n",
+      "Buddy is 3 years old\n",
+      "John is 7 years old\n"
+     ]
+    }
+   ],
+   "source": [
+    "class Dog:\n",
+    "\n",
+    "    def __init__(self, name, age, species): # initialises name and age\n",
+    "        self.name = name  # Instance attribute of the Dog class\n",
+    "        self.age = age # Instance attribute of the Dog class\n",
+    "        self.species = species # Instance attribute of the Dog class\n",
+    "    def bark(self): \n",
+    "        print(f\"{self.name} is barking!\")\n",
+    "    def __str__(self):\n",
+    "        return f\"{self.name} is {self.age} years old\"\n",
+    "# with this , whenever we type dog1.bark it produces a string that says\n",
+    "# Buddy is barking!\n",
+    "# Creating an instance of Dog\n",
+    "dog1 = Dog(\"Buddy\", 3,\"Canine\")\n",
+    "dog2 = Dog(\"John\", 7,\"Corgi\")\n",
+    "dog1.bark()\n",
+    "print(dog1)\n",
+    "print(dog2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "682faa8f-e7e8-41b1-8799-c1ffe9556583",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
